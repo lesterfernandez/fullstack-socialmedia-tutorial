@@ -7,11 +7,11 @@ const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  color: white;
+  color: ${({ theme }) => theme.text};
   margin: 0;
   background-color: ${({ theme }) => theme.body};
-  font-family:  'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: "Montserrat", 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fikura Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

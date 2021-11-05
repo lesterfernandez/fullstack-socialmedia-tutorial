@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
-const App = styled.div``;
+const App = styled.div`
+  min-height: 100vh;
+`;
 
 export default App;
