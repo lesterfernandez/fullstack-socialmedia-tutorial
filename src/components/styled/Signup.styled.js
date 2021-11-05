@@ -26,6 +26,7 @@ const Signup = styled.div`
 `;
 
 export const SignupButton = styled.button`
+  font-family: "Montserrat", sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
