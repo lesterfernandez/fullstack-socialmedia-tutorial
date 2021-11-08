@@ -15,7 +15,13 @@ function App() {
       <ThemeProvider theme={darkTheme}>
         <GlobalStyle />
         <StyledApp>
-          {user?.loggedIn === true ? "logged in" : <Signup />}
+          {user?.loggedIn === null ? (
+            ""
+          ) : user?.loggedIn === true ? (
+            "logged in"
+          ) : (
+            <Signup />
+          )}
         </StyledApp>
       </ThemeProvider>
     </BrowserRouter>
