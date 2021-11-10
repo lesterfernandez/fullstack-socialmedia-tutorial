@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import SignedInApp from "./components/SignedInApp";
 import Signup from "./components/Signup";
 import StyledApp from "./components/styled/App.styled";
 import GlobalStyle from "./components/styled/GlobalStyles";
@@ -19,7 +18,7 @@ function App() {
           {user?.loggedIn === null ? (
             ""
           ) : user?.loggedIn === true ? (
-            <SignedInApp />
+            "logged in"
           ) : (
             <Signup />
           )}
