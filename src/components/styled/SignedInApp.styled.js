@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const SignedInApp = styled.nav``;
+const SignedInApp = styled.div``;
 
 export const HamburgerButton = styled.button`
   display: none;
@@ -22,7 +22,7 @@ export const HamburgerButton = styled.button`
   }
 `;
 
-export const MobileMenu = styled.div`
+export const MobileMenu = styled.nav`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -51,7 +51,7 @@ export const MobileMenu = styled.div`
   }
 `;
 
-export const DesktopMenu = styled.div`
+export const DesktopMenu = styled.nav`
   display: none;
   @media (min-width: 600px) {
     position: sticky;
