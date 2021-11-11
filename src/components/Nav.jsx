@@ -5,38 +5,61 @@ import StyledNav, {
   HamburgerButton,
   MobileMenu,
 } from "./styled/Nav.styled";
+import { PostModalButton } from "./styled/PostModal.styled";
 
-const Nav = () => {
+const Nav = ({ setModal }) => {
   const [navOpen, setNav] = useState(false);
   return (
     <StyledNav>
       <HamburgerButton className="fas fa-bars" onClick={() => setNav(c => !c)} />
 
       <MobileMenu open={navOpen}>
-        <Link to="/" onClick={() => setNav(false)}>
-          <h1>Social Media</h1>
-        </Link>
-        <Link to="/" onClick={() => setNav(false)}>
-          <p>Feed</p>
-        </Link>
-        <Link to="/account" onClick={() => setNav(false)}>
-          <p>Account</p>
-        </Link>
+        <Links setNav={setNav} setModal={setModal} />
       </MobileMenu>
 
       <DesktopMenu>
-        <Link to="/">
-          <h1>Social Media</h1>
-        </Link>
-        <Link to="/">
-          <p>Feed</p>
-        </Link>
-        <Link to="/account">
-          <p>Account</p>
-        </Link>
+        <Links setNav={null} setModal={setModal} />
       </DesktopMenu>
     </StyledNav>
   );
 };
 
 export default Nav;
+
+const Links = ({ setNav, setModal }) => (
+  <>
+    <Link
+      to="/"
+      onClick={() => {
+        if (setNav) setNav(false);
+      }}
+    >
+      <h1>Social Media</h1>
+    </Link>
+    <Link
+      to="/"
+      onClick={() => {
+        if (setNav) {
+          setNav(false);
+        }
+      }}
+    >
+      <p>Feed</p>
+    </Link>
+    <Link
+      to="/account"
+      onClick={() => {
+        if (setNav) setNav(false);
+      }}
+    >
+      <p>Account</p>
+    </Link>
+    <PostModalButton
+      onClick={() => {
+        if (setNav) setNav(false);
+        setModal(c => !c);
+      }}
+      className="fas fa-plus"
+    />
+  </>
+);
