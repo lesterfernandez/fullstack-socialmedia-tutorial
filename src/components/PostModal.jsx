@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import useSendPost from "./hooks/useSendPost";
 import StyledPostModal, {
   PostModalForm,
   PostModalHeader,
@@ -7,6 +8,8 @@ import StyledPostModal, {
 const PostModal = ({ setModal }) => {
   const [value, setValue] = useState({ post: "" });
   const backgroundRef = useRef();
+  const { mutate: sendPost } = useSendPost();
+
   return (
     <StyledPostModal
       ref={backgroundRef}
@@ -20,6 +23,7 @@ const PostModal = ({ setModal }) => {
           const postText = value.post;
           if (postText.length > 0) {
             // send post to api
+            sendPost({ post: postText });
           }
           setValue({ post: "" });
           setModal(false);

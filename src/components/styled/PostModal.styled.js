@@ -3,7 +3,7 @@ import styled from "styled-components";
 const PostModal = styled.div`
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 3;
   background-color: #1118;
   display: flex;
   justify-content: center;
@@ -53,7 +53,7 @@ export const PostModalForm = styled.form`
 export const PostModalHeader = styled.div``;
 
 export const PostModalButton = styled.i`
-  z-index: 2;
+  z-index: 4;
   margin-top: auto;
   margin-inline: auto;
   padding: 0.7rem 1.7rem;
