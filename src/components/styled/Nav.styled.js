@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
-const Nav = styled.div``;
+const Nav = styled.div`
+  position: sticky;
+  top: 0;
+`;
 
 export const HamburgerButton = styled.i`
   position: absolute;

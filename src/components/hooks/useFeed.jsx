@@ -1,11 +1,11 @@
 import { useInfiniteQuery } from "react-query";
 
-const useFeed = () => {
+const useFeed = (path = "feed") => {
   return useInfiniteQuery(
-    "feed",
+    `${path}`,
     async ({ pageParam = 0 }) => {
       const res = await fetch(
-        `${process.env.REACT_APP_SERVER_URL}/feed?cursor=${pageParam}`,
+        `${process.env.REACT_APP_SERVER_URL}/${path}?cursor=${pageParam}`,
         {
           credentials: "include",
         }
