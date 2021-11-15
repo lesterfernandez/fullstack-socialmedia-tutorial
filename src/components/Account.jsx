@@ -1,5 +1,8 @@
+import useMyPosts from "./hooks/useMyPosts";
+
 const Account = () => {
-  return <div>Account</div>;
+  const { data } = useMyPosts();
+  return <pre>{JSON.stringify(data, null, 2)}</pre>;
 };
 
 export default Account;
